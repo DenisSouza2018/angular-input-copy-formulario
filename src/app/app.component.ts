@@ -37,6 +37,15 @@ export class AppComponent {
     { value: '', edit: false },
   ];
 
+  obj4 = [
+    { value: '', edit: false },
+    { value: '', edit: false },
+    { value: '', edit: false },
+    { value: '', edit: false },
+    { value: '', edit: false },
+    { value: '', edit: false },
+  ];
+
   name1 = 'Angular ';
   name2;
 
@@ -48,6 +57,10 @@ export class AppComponent {
 
       case 2:
         this.obj2[index].edit = true;
+        break;
+
+      case 3:
+        this.obj3[index].edit = true;
         break;
     }
   }
@@ -71,6 +84,17 @@ export class AppComponent {
           if (e.edit) {
             this.obj3[index].edit = e.edit;
             this.obj3[index].value = e.value;
+          }
+        });
+        break;
+
+      case 3:
+        this.resetEdit(this.obj2);
+        this.resetEdit(this.obj4);
+        this.obj3.forEach((e, index) => {
+          if (e.edit) {
+            this.obj4[index].edit = e.edit;
+            this.obj4[index].value = e.value;
           }
         });
         break;

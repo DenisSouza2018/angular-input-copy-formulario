@@ -1,0 +1,29 @@
+
+<p>Start editing to see some magic happen :)</p>
+
+<div class="row">
+  <div class="col">
+    <div class="col">
+      <input
+        *ngFor="let obj of obj1; index as i"
+        [(ngModel)]="obj.value"
+        (keyup)="changeEdit(1,i)"
+      />
+    </div>
+    <button mat-button (click)="copy(1)">Copy</button>
+  </div>
+</div>
+
+<div class="row" style="margin-top:10px">
+  <div class="col">
+    <input *ngFor="let obj of obj2; index as i" [(ngModel)]="obj.value" (keyup)="changeEdit(2,i)"
+    />
+  </div>
+  <button mat-button (click)="copy(2)">Copy</button>
+</div>
+
+<div class="row" style="margin-top:10px">
+<div class="col">
+  <input *ngFor="let obj of obj3" [(ngModel)]="obj.value" />
+</div>
+</div>
